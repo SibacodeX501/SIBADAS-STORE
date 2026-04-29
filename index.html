@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAS PAN CENTER - Digital Store</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #000000; color: #ffffff; }
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .btn-gradient { background: linear-gradient(90deg, #1e40af, #3b82f6); }
+    </style>
+</head>
+<body class="font-sans">
+
+    <header class="p-8 text-center border-b border-gray-900">
+        <h1 class="text-4xl font-extrabold tracking-tight text-blue-500 mb-2">DAS PAN CENTER</h1>
+        <p class="text-gray-400 uppercase tracking-widest text-xs">Premium Digital & Printing Services</p>
+    </header>
+
+    <main class="p-6 max-w-5xl mx-auto">
+        <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Our Services</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass p-5 rounded-3xl transition hover:scale-105 duration-300">
+                <img src="https://i.ibb.co/yFr0P33p/image.jpg" class="w-full h-48 object-cover rounded-2xl mb-4" alt="Photo Printing">
+                <h3 class="font-bold text-xl mb-1">Photo Printing</h3>
+                <p class="text-gray-400 text-sm">Passport size, Glossy finish photos.</p>
+                <p class="text-blue-400 mt-3 font-bold text-lg">Starts @ ₹50</p>
+            </div>
+
+            <div class="glass p-5 rounded-3xl transition hover:scale-105 duration-300">
+                <img src="https://i.ibb.co/yFr0P33p/image.jpg" class="w-full h-48 object-cover rounded-2xl mb-4" alt="Online Apply">
+                <h3 class="font-bold text-xl mb-1">Online Job Apply</h3>
+                <p class="text-gray-400 text-sm">Fast and accurate form filling.</p>
+                <p class="text-blue-400 mt-3 font-bold text-lg">Service Charge: ₹50</p>
+            </div>
+
+            <div class="glass p-5 rounded-3xl transition hover:scale-105 duration-300">
+                <img src="https://i.ibb.co/yFr0P33p/image.jpg" class="w-full h-48 object-cover rounded-2xl mb-4" alt="Lamination">
+                <h3 class="font-bold text-xl mb-1">Lamination & Spiral</h3>
+                <p class="text-gray-400 text-sm">Durable protection for documents.</p>
+                <p class="text-blue-400 mt-3 font-bold text-lg">Starts @ ₹20</p>
+            </div>
+        </div>
+
+        <section class="mt-16 mb-24 max-w-2xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold">Place Your Order</h2>
+                <p class="text-gray-500 mt-2">Details bharo, order direct mail par aayega</p>
+            </div>
+
+            <form action="https://formspree.io/f/mnjwanbq" method="POST" class="glass p-8 rounded-[2rem] space-y-6 shadow-2xl">
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-2">Aapka Naam</label>
+                    <input type="text" name="customer_name" placeholder="Enter your name" required 
+                        class="w-full bg-black border border-gray-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-2">WhatsApp Number</label>
+                    <input type="tel" name="phone_number" placeholder="Enter mobile number" required 
+                        class="w-full bg-black border border-gray-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-2">Service Select Karein</label>
+                    <select name="service_type" class="w-full bg-black border border-gray-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition appearance-none">
+                        <option>Photo Printing (Passport Size)</option>
+                        <option>Online Job Application</option>
+                        <option>Lamination / Spiral Binding</option>
+                        <option>Rubber Stamp / Batch</option>
+                        <option>Other Digital Work</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-400 mb-2">Kuch aur batana hai? (Optional)</label>
+                    <textarea name="message" rows="3" placeholder="Extra details..." 
+                        class="w-full bg-black border border-gray-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition"></textarea>
+                </div>
+
+                <button type="submit" class="w-full btn-gradient text-white font-bold py-5 rounded-2xl shadow-lg shadow-blue-900/30 active:scale-95 transition text-lg">
+                    SUBMIT ORDER
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <div class="fixed bottom-6 right-6 flex flex-col space-y-4">
+        <a href="https://wa.me/9861726424" target="_blank" class="bg-[#25D366] p-4 rounded-full shadow-xl hover:scale-110 transition">
+            <svg viewBox="0 0 24 24" class="w-7 h-7 fill-white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.892-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.413 0 6.556-5.332 11.892-11.893 11.892-1.997 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.591 5.453 0 9.892-4.439 9.892-9.891 0-5.452-4.439-9.891-9.892-9.891-5.452 0-9.891 4.439-9.891 9.891 0 2.13.635 3.77 1.698 5.376l-.979 3.57 3.78-.99z"/></svg>
+        </a>
+    </div>
+
+</body>
+</html>
