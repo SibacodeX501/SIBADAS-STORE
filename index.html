@@ -3,96 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DAS PAN CENTER - Digital Store</title>
+    <title>Das Shopping-mall | Karanjia</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { background-color: #000000; color: #ffffff; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .btn-gradient { background: linear-gradient(90deg, #1e40af, #3b82f6); }
+        .product-card { transition: 0.3s; border: 1px solid #e5e7eb; }
+        .product-card:hover { transform: translateY(-5px); border-color: #febd69; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .amazon-bg { background-color: #131921; }
     </style>
 </head>
-<body class="font-sans">
+<body class="bg-gray-100">
 
-    <header class="p-8 text-center border-b border-gray-900">
-        <h1 class="text-4xl font-extrabold tracking-tight text-blue-500 mb-2">DAS PAN CENTER</h1>
-        <p class="text-gray-400 uppercase tracking-widest text-xs">Premium Digital & Printing Services</p>
-    </header>
-
-    <main class="p-6 max-w-5xl mx-auto">
-        <h2 class="text-2xl font-bold mb-8 border-l-4 border-blue-600 pl-4">Our Services</h2>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass p-5 rounded-3xl transition hover:scale-105 duration-300">
-                <img src="https://i.ibb.co/yFr0P33p/image.jpg" class="w-full h-48 object-cover rounded-2xl mb-4" alt="Photo Printing">
-                <h3 class="font-bold text-xl mb-1">Photo Printing</h3>
-                <p class="text-gray-400 text-sm">Passport size, Glossy finish photos.</p>
-                <p class="text-blue-400 mt-3 font-bold text-lg">Starts @ ₹50</p>
-            </div>
-
-            <div class="glass p-5 rounded-3xl transition hover:scale-105 duration-300">
-                <img src="https://i.ibb.co/yFr0P33p/image.jpg" class="w-full h-48 object-cover rounded-2xl mb-4" alt="Online Apply">
-                <h3 class="font-bold text-xl mb-1">Online Job Apply</h3>
-                <p class="text-gray-400 text-sm">Fast and accurate form filling.</p>
-                <p class="text-blue-400 mt-3 font-bold text-lg">Service Charge: ₹50</p>
-            </div>
-
-            <div class="glass p-5 rounded-3xl transition hover:scale-105 duration-300">
-                <img src="https://i.ibb.co/yFr0P33p/image.jpg" class="w-full h-48 object-cover rounded-2xl mb-4" alt="Lamination">
-                <h3 class="font-bold text-xl mb-1">Lamination & Spiral</h3>
-                <p class="text-gray-400 text-sm">Durable protection for documents.</p>
-                <p class="text-blue-400 mt-3 font-bold text-lg">Starts @ ₹20</p>
-            </div>
+<nav class="amazon-bg text-white sticky top-0 z-50">
+    <div class="max-w-[1500px] mx-auto flex items-center p-2 gap-4">
+        <div class="text-2xl font-bold text-[#febd69] ml-4">Das Shopping-mall</div>
+        <div class="hidden md:flex flex-1 items-center bg-white rounded-md overflow-hidden">
+            <input type="text" placeholder="Search for PSD, CDR, Backgrounds..." class="w-full p-2 text-black outline-none">
+            <button class="bg-[#febd69] p-2 px-5 text-black hover:bg-[#f3a847]"><i class="fa fa-search"></i></button>
         </div>
-
-        <section class="mt-16 mb-24 max-w-2xl mx-auto">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold">Place Your Order</h2>
-                <p class="text-gray-500 mt-2">Details bharo, order direct mail par aayega</p>
-            </div>
-
-            <form action="https://formspree.io/f/mnjwanbq" method="POST" class="glass p-8 rounded-[2rem] space-y-6 shadow-2xl">
-                <div>
-                    <label class="block text-sm font-medium text-gray-400 mb-2">Aapka Naam</label>
-                    <input type="text" name="customer_name" placeholder="Enter your name" required 
-                        class="w-full bg-black border border-gray-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-400 mb-2">WhatsApp Number</label>
-                    <input type="tel" name="phone_number" placeholder="Enter mobile number" required 
-                        class="w-full bg-black border border-gray-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition">
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-400 mb-2">Service Select Karein</label>
-                    <select name="service_type" class="w-full bg-black border border-gray-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition appearance-none">
-                        <option>Photo Printing (Passport Size)</option>
-                        <option>Online Job Application</option>
-                        <option>Lamination / Spiral Binding</option>
-                        <option>Rubber Stamp / Batch</option>
-                        <option>Other Digital Work</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="block text-sm font-medium text-gray-400 mb-2">Kuch aur batana hai? (Optional)</label>
-                    <textarea name="message" rows="3" placeholder="Extra details..." 
-                        class="w-full bg-black border border-gray-800 p-4 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-600 transition"></textarea>
-                </div>
-
-                <button type="submit" class="w-full btn-gradient text-white font-bold py-5 rounded-2xl shadow-lg shadow-blue-900/30 active:scale-95 transition text-lg">
-                    SUBMIT ORDER
-                </button>
-            </form>
-        </section>
-    </main>
-
-    <div class="fixed bottom-6 right-6 flex flex-col space-y-4">
-        <a href="https://wa.me/9861726424" target="_blank" class="bg-[#25D366] p-4 rounded-full shadow-xl hover:scale-110 transition">
-            <svg viewBox="0 0 24 24" class="w-7 h-7 fill-white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.892-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.413 0 6.556-5.332 11.892-11.893 11.892-1.997 0-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.591 5.453 0 9.892-4.439 9.892-9.891 0-5.452-4.439-9.891-9.892-9.891-5.452 0-9.891 4.439-9.891 9.891 0 2.13.635 3.77 1.698 5.376l-.979 3.57 3.78-.99z"/></svg>
-        </a>
+        <div class="flex items-center space-x-6 mr-4 text-sm">
+            <div class="cursor-pointer">Hello, Siba<br><b class="text-base">Account</b></div>
+            <div class="cursor-pointer font-bold flex items-center"><i class="fa fa-shopping-cart text-2xl mr-1"></i> Cart</div>
+        </div>
     </div>
+</nav>
+
+<div class="flex max-w-[1500px] mx-auto mt-4 gap-4 px-4">
+    
+    <aside class="hidden lg:block w-64 bg-white p-4 rounded shadow-sm h-fit">
+        <h3 class="font-bold border-b pb-2 mb-4">Categories</h3>
+        <ul class="space-y-3 text-sm">
+            <li><input type="checkbox" class="mr-2"> Wedding PSD Packs</li>
+            <li><input type="checkbox" class="mr-2"> Festival CDR Files</li>
+            <li><input type="checkbox" class="mr-2"> PNG Overlays</li>
+            <li><input type="checkbox" class="mr-2"> HD Backgrounds</li>
+            <li><input type="checkbox" class="mr-2"> Banner Templates</li>
+        </ul>
+        <h3 class="font-bold border-b pb-2 mt-6 mb-4">Price Range</h3>
+        <ul class="space-y-2 text-sm text-blue-700">
+            <li class="cursor-pointer hover:text-orange-600">Under ₹200</li>
+            <li class="cursor-pointer hover:text-orange-600">₹200 - ₹500</li>
+            <li class="cursor-pointer hover:text-orange-600">₹500 - ₹1000</li>
+        </ul>
+    </aside>
+
+    <main class="flex-1">
+        <h2 class="text-2xl font-bold mb-4 bg-white p-4 rounded shadow-sm">Trending Graphics for You</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mb-10">
+            
+            <div class="bg-white p-4 rounded product-card cursor-pointer flex flex-col justify-between" onclick="alert('Product Details Coming Soon!')">
+                <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400" class="w-full h-40 object-cover mb-2 rounded">
+                <h4 class="font-medium text-sm line-clamp-2">Premium Wedding Studio PSD Background (50 Layers)</h4>
+                <div class="text-yellow-500 text-xs my-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i> 1,240</div>
+                <p class="text-xl font-bold text-red-700">₹499 <span class="text-xs text-gray-500 font-normal line-through">₹999</span></p>
+                <button class="bg-[#febd69] hover:bg-[#f3a847] w-full py-1.5 mt-2 rounded-md font-medium text-sm">Add to Cart</button>
+            </div>
+            </div>
+    </main>
+</div>
+
+<footer class="bg-[#232f3e] text-white p-10 mt-10">
+    <div class="max-w-7xl mx-auto text-center">
+        <p class="text-lg font-bold mb-2 text-[#febd69]">DAS PAN CENTER & SHOPPING-MALL</p>
+        <p class="text-sm text-gray-400">Karanjia, Odisha | WhatsApp: 7008807942</p>
+        <div class="mt-4 flex justify-center space-x-6 text-xl">
+            <i class="fab fa-facebook cursor-pointer"></i>
+            <i class="fab fa-instagram cursor-pointer"></i>
+            <i class="fab fa-whatsapp cursor-pointer"></i>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
