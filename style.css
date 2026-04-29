@@ -1,0 +1,24 @@
+/* style.css snippet */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-10px); /* Flipkart jaisa hover effect */
+}
+
+.buy-btn {
+    background-color: #ff9f00; /* Amazon/Flipkart yellow color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
