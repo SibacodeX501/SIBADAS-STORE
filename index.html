@@ -3,173 +3,204 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>rkDasGraphic | Download Best Digital Products</title>
+    <title>rkDasGraphic | Premium Digital Asset Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; background-color: #ffffff; }
-        .nav-link { font-size: 14px; font-weight: 500; color: #333; transition: 0.3s; }
-        .nav-link:hover { color: #001f3f; }
-        .category-item:hover { transform: translateY(-5px); transition: 0.3s; }
-        .discount-badge { background-color: #1a3a8a; color: white; padding: 2px 8px; font-size: 10px; font-weight: bold; border-radius: 2px; }
-        .heart-btn:hover { background-color: #f8f9fa; color: #ff0000; }
-        .search-bar { border: 1px solid #e2e8f0; border-radius: 5px 0 0 5px; }
+        body { font-family: 'Jost', sans-serif; background-color: #ffffff; }
+        /* Dropdown Styling */
+        .nav-item:hover .dropdown-menu { display: block; opacity: 1; transform: translateY(0); }
+        .dropdown-menu { display: none; opacity: 0; transform: translateY(10px); transition: all 0.3s ease; z-index: 100; }
+        
+        /* Category Animation */
+        .cat-box:hover { box-shadow: 0 10px 25px rgba(0,0,0,0.08); transform: translateY(-5px); transition: 0.4s; }
+        
+        /* Product Card Styling */
+        .product-card { transition: 0.3s; border: 1px solid #f0f0f0; border-radius: 8px; overflow: hidden; }
+        .product-card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-color: #6366f1; }
+        
+        /* Modal Animation */
+        #detailsModal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 999; backdrop-filter: blur(5px); }
+        .modal-content { animation: slideIn 0.3s ease-out; }
+        @keyframes slideIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        .pagination-btn { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; border-radius: 4px; transition: 0.3s; }
+        .pagination-btn:hover { background: #6366f1; color: white; border-color: #6366f1; }
+        .active-page { background: #6366f1; color: white; border-color: #6366f1; }
     </style>
 </head>
 <body>
 
-<div class="bg-[#001f3f] text-white text-[11px] py-1.5 text-center font-medium tracking-wide">
-    Designs that Define You — Welcome to rkDasGraphic
+<div class="bg-[#001f3f] text-white text-[12px] py-2 text-center font-medium">
+    <p>Premium PSD, CDR & Vector Files — High Quality Guaranteed</p>
 </div>
 
-<header class="bg-white border-b sticky top-0 z-50">
+<header class="bg-white border-b sticky top-0 z-50 shadow-sm">
     <div class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
-        <div class="flex items-center space-x-2">
-            <div class="text-3xl font-black text-[#1a1a1a] tracking-tighter">
-                rk<span class="text-[#1a1a1a]">Das</span><br>
-                <span class="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-500">Graphic</span>
-            </div>
+        <div class="flex flex-col leading-tight">
+            <span class="text-3xl font-black text-gray-900 tracking-tighter">rk<span class="text-gray-900">Das</span></span>
+            <span class="text-[10px] uppercase tracking-[0.4em] font-bold text-gray-500">Graphic</span>
         </div>
 
-        <nav class="hidden lg:flex space-x-7">
-            <a href="#" class="nav-link text-blue-700">Home</a>
-            <div class="relative group">
-                <a href="#" class="nav-link flex items-center">Graphic Design <i class="fa fa-chevron-down text-[10px] ml-1"></i></a>
+        <nav class="hidden lg:flex space-x-10">
+            <a href="#" class="font-semibold text-sm hover:text-indigo-600 transition">Home</a>
+            
+            <div class="relative nav-item">
+                <a href="#" class="font-semibold text-sm hover:text-indigo-600 flex items-center gap-1">Graphic Design <i class="fa fa-angle-down text-xs"></i></a>
+                <div class="dropdown-menu absolute bg-white shadow-xl border border-gray-100 rounded-lg py-4 w-56 top-full mt-2">
+                    <a href="#" class="block px-6 py-2 hover:bg-indigo-50 hover:text-indigo-600 text-sm font-medium">PSD Templates</a>
+                    <a href="#" class="block px-6 py-2 hover:bg-indigo-50 hover:text-indigo-600 text-sm font-medium">CDR CorelDraw</a>
+                    <a href="#" class="block px-6 py-2 hover:bg-indigo-50 hover:text-indigo-600 text-sm font-medium">AI Illustrator</a>
+                    <a href="#" class="block px-6 py-2 hover:bg-indigo-50 hover:text-indigo-600 text-sm font-medium">Mockups</a>
+                </div>
             </div>
-            <a href="#" class="nav-link">Premium</a>
-            <a href="#" class="nav-link">CorelDraw File</a>
-            <a href="#" class="nav-link">Free Template</a>
-            <a href="#" class="nav-link text-red-500 font-bold underline decoration-2">Contact Us</a>
+
+            <a href="#" class="font-semibold text-sm hover:text-indigo-600">Premium</a>
+            <a href="#" class="font-semibold text-sm hover:text-indigo-600">CorelDraw File</a>
+            <a href="#" class="font-semibold text-sm hover:text-indigo-600">Free Template</a>
+            <a href="#" class="font-bold text-sm text-red-600 border-b-2 border-red-600">Contact Us</a>
         </nav>
 
-        <div class="flex items-center space-x-5 text-gray-700">
-            <i class="fa fa-search text-lg cursor-pointer"></i>
-            <div class="relative cursor-pointer">
+        <div class="flex items-center space-x-6 text-gray-600">
+            <i class="fa fa-search text-lg cursor-pointer hover:text-indigo-600"></i>
+            <div class="relative cursor-pointer hover:text-indigo-600">
                 <i class="fa-regular fa-heart text-lg"></i>
-                <span class="absolute -top-2 -right-2 bg-blue-700 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                <span class="absolute -top-2 -right-2 bg-indigo-600 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
             </div>
-            <i class="fa-regular fa-user text-lg cursor-pointer"></i>
-            <div class="relative cursor-pointer">
+            <div class="relative cursor-pointer hover:text-indigo-600">
                 <i class="fa fa-shopping-basket text-lg"></i>
-                <span class="absolute -top-2 -right-2 bg-blue-700 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+                <span class="absolute -top-2 -right-2 bg-indigo-600 text-white text-[9px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
             </div>
         </div>
     </div>
 </header>
 
-<section class="bg-slate-50 py-16 px-6 text-center border-b">
-    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">The Best Graphic Design Templates</h1>
-    <p class="text-gray-500 text-lg mb-8">Creative Templates, Designed for You.</p>
-    
-    <div class="max-w-2xl mx-auto flex shadow-sm">
-        <input type="text" placeholder="Search..." class="w-full p-4 search-bar outline-none text-sm">
-        <button class="bg-[#6366f1] px-8 rounded-r-md text-white hover:bg-blue-800 transition"><i class="fa fa-search"></i></button>
+<section class="bg-gray-50 py-20 px-4 border-b border-gray-100">
+    <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-6xl font-black text-gray-900 mb-6">The Best Graphic Design Templates</h1>
+        <p class="text-gray-500 text-lg mb-10">Creative Templates, Designed for You.</p>
+        <div class="flex max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden p-1 border">
+            <input type="text" placeholder="Search for files..." class="w-full px-6 py-3 outline-none text-gray-700">
+            <button class="bg-[#6366f1] text-white px-8 rounded-md font-bold hover:bg-indigo-700 transition">Search</button>
+        </div>
     </div>
 </section>
 
 <section class="max-w-7xl mx-auto py-16 px-6">
     <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800">Browse By <span class="text-[#6366f1]">Category</span></h2>
-        <p class="text-gray-400 text-sm mt-1">Discover Creativity in Every Category</p>
+        <h2 class="text-3xl font-bold">Browse By <span class="text-indigo-600">Category</span></h2>
+        <p class="text-gray-400 mt-2">Discover Creativity in Every Category</p>
     </div>
-
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-        <div class="bg-white p-8 rounded-xl shadow-sm border category-item cursor-pointer text-center">
-            <div class="w-10 h-10 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center mx-auto mb-4 font-black italic">Ps</div>
-            <p class="text-sm font-bold uppercase tracking-tight">PSD File</p>
+        <div class="bg-white p-8 rounded-2xl border cat-box text-center cursor-pointer">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 flex items-center justify-center rounded-xl mx-auto mb-4 font-black italic text-lg">Ps</div>
+            <p class="font-bold text-sm uppercase">PSD File</p>
         </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm border category-item cursor-pointer text-center">
-            <div class="w-10 h-10 bg-gray-50 text-gray-600 rounded-lg flex items-center justify-center mx-auto mb-4"><i class="fa fa-parachute-box text-xl"></i></div>
-            <p class="text-sm font-bold uppercase tracking-tight">CDR File</p>
-        </div>
-        <div class="bg-white p-8 rounded-xl shadow-sm border category-item cursor-pointer text-center">
-            <div class="w-10 h-10 bg-red-50 text-red-600 rounded-lg flex items-center justify-center mx-auto mb-4 font-black italic">Ai</div>
-            <p class="text-sm font-bold uppercase tracking-tight">AI File</p>
+        <div class="bg-white p-8 rounded-2xl border cat-box text-center cursor-pointer">
+            <div class="w-12 h-12 bg-orange-50 text-orange-600 flex items-center justify-center rounded-xl mx-auto mb-4"><i class="fa fa-parachute-box text-2xl"></i></div>
+            <p class="font-bold text-sm uppercase">CDR File</p>
         </div>
         </div>
 </section>
 
 <section class="max-w-7xl mx-auto py-10 px-6">
     <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-800">Featured <span class="text-[#6366f1]">Items</span></h2>
-        <p class="text-gray-400 text-sm mt-1">Download Best Digital Products</p>
+        <h2 class="text-3xl font-bold text-gray-800">Featured <span class="text-indigo-600">Items</span></h2>
+        <p class="text-gray-400 mt-2">Download Best Digital Products</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-10">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-12">
         
-        <div class="group relative">
-            <div class="relative overflow-hidden rounded-lg bg-gray-100 mb-4">
-                <span class="absolute top-2 left-2 z-10 discount-badge">-62%</span>
-                <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500" class="w-full h-72 object-cover">
-                <div class="absolute bottom-2 right-2 heart-btn bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-md cursor-pointer transition">
-                    <i class="fa-regular fa-heart text-gray-400 text-xs"></i>
+        <div class="product-card group cursor-pointer bg-white" onclick="openModal('Premium Wedding Standee', '₹499', 'https://via.placeholder.com/500', 'Full Editable PSD layers. High Resolution 300 DPI for best quality prints.')">
+            <div class="relative aspect-[3/4]">
+                <span class="absolute top-3 left-3 bg-indigo-700 text-white text-[10px] font-bold px-2 py-1 rounded"> -62% </span>
+                <img src="https://via.placeholder.com/300x400" class="w-full h-full object-cover">
+                <div class="absolute bottom-3 right-3 bg-white w-10 h-10 rounded-full flex items-center justify-center shadow hover:text-red-500">
+                    <i class="fa-regular fa-heart"></i>
                 </div>
             </div>
-            <h3 class="text-[13px] font-medium text-gray-600 line-clamp-2 leading-relaxed h-10">Premium 25x4 Wedding Standee PSD Template | Fully Editable Wedding Welcome Standee Design</h3>
-            <div class="flex items-center space-x-2 mt-2">
-                <span class="text-gray-400 line-through text-xs italic">₹1,299.00</span>
-                <span class="text-blue-800 font-bold text-base">₹499.00</span>
+            <div class="p-4">
+                <h3 class="text-sm font-medium text-gray-700 line-clamp-2 leading-tight h-10 mb-2">Premium 25x4 Wedding Welcome Standee PSD Template | Fully Editable</h3>
+                <div class="flex items-center gap-2">
+                    <span class="text-gray-400 line-through text-xs italic">₹1,299</span>
+                    <span class="text-indigo-800 font-bold text-lg">₹499.00</span>
+                </div>
             </div>
         </div>
 
-        <div class="group relative">
-            <div class="relative overflow-hidden rounded-lg bg-gray-100 mb-4">
-                <span class="absolute top-2 left-2 z-10 discount-badge">-75%</span>
-                <img src="https://images.unsplash.com/photo-1563297007-0686b7003af7?w=500" class="w-full h-72 object-cover">
-                <div class="absolute bottom-2 right-2 heart-btn bg-white w-8 h-8 rounded-full flex items-center justify-center shadow-md cursor-pointer transition">
-                    <i class="fa-regular fa-heart text-gray-400 text-xs"></i>
-                </div>
-            </div>
-            <h3 class="text-[13px] font-medium text-gray-600 line-clamp-2 leading-relaxed h-10">Creative 1st Birthday Invitation Card PSD Template</h3>
-            <div class="flex items-center space-x-2 mt-2">
-                <span class="text-gray-400 line-through text-xs italic">₹399.00</span>
-                <span class="text-blue-800 font-bold text-base">₹100.00</span>
-            </div>
         </div>
 
+    <div class="mt-20 flex justify-center items-center space-x-2">
+        <a href="#" class="pagination-btn active-page font-bold">1</a>
+        <a href="#" class="pagination-btn font-bold">2</a>
+        <a href="#" class="pagination-btn font-bold">3</a>
+        <span class="px-4">...</span>
+        <a href="#" class="pagination-btn font-bold text-xs uppercase">10</a>
+        <a href="#" class="pagination-btn"><i class="fa fa-angle-right"></i></a>
     </div>
 </section>
 
-<footer class="bg-black text-white py-16 px-6 mt-20 border-t-8 border-[#001f3f]">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div class="space-y-5">
-            <div class="text-2xl font-black italic">rk<span class="text-blue-400">Das</span> Graphic</div>
-            <p class="text-gray-400 text-[13px] leading-relaxed">We are dedicated to empowering businesses through cutting-edge technology and creative solutions. Our goal is to help you achieve more with less hassle and more impact. [cite: 150, 154, 157, 158]</p>
-        </div>
-        
+<footer class="bg-black text-white pt-20 pb-10 px-6 mt-20 border-t-[10px] border-[#001f3f]">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-16">
         <div>
-            <h4 class="font-bold text-base mb-6">Company</h4>
-            <ul class="text-gray-400 space-y-3 text-[13px]">
-                <li class="hover:text-white cursor-pointer">Privacy Policy</li>
-                <li class="hover:text-white cursor-pointer">Terms & Conditions</li>
-                <li class="hover:text-white cursor-pointer">Refund Policy</li>
-                <li class="hover:text-white cursor-pointer">About Us</li>
+            <div class="text-3xl font-black mb-6">rk<span class="text-indigo-400">Das</span> Graphic</div>
+            <p class="text-gray-400 text-sm leading-relaxed">We are dedicated to empowering designers with high-quality digital assets. Creative solutions for your business needs.</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Company</h4>
+            <ul class="text-gray-400 space-y-4 text-sm font-medium">
+                <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
+                <li><a href="#" class="hover:text-white">Refund Policy</a></li>
             </ul>
         </div>
-
         <div>
-            <h4 class="font-bold text-base mb-6">Contact us</h4>
-            <ul class="text-gray-400 space-y-4 text-[13px]">
-                <li><i class="fa fa-location-dot text-blue-400 mr-2"></i> Karanjia, Mayurbhanj, Odisha</li>
-                <li><i class="fa fa-envelope text-blue-400 mr-2"></i> your-email@gmail.com</li>
-                <li><i class="fa fa-phone text-blue-400 mr-2"></i> +91 7008807942</li>
-            </ul>
+            <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Contact Us</h4>
+            <p class="text-gray-400 text-sm mb-4"><i class="fa fa-location-dot text-indigo-500 mr-2"></i> Karanjia, Mayurbhanj, Odisha</p>
+            <p class="text-gray-400 text-sm mb-4"><i class="fa fa-envelope text-indigo-500 mr-2"></i> info@rkdasgraphic.com</p>
+            <p class="text-gray-400 text-sm font-bold"><i class="fa fa-phone text-indigo-500 mr-2"></i> +91 7008807942</p>
         </div>
-
         <div>
-            <h4 class="font-bold text-base mb-6">Don't Hesitate to Contact Us</h4>
+            <h4 class="font-bold mb-6 uppercase tracking-widest text-sm">Social Links</h4>
             <div class="flex space-x-4">
-                <div class="bg-gray-800 p-2.5 rounded hover:bg-blue-600 cursor-pointer transition"><i class="fab fa-facebook-f"></i></div>
-                <div class="bg-gray-800 p-2.5 rounded hover:bg-pink-600 cursor-pointer transition"><i class="fab fa-instagram"></i></div>
-                <div class="bg-gray-800 p-2.5 rounded hover:bg-green-600 cursor-pointer transition"><i class="fab fa-whatsapp text-xl font-bold"></i></div>
+                <div class="bg-gray-800 p-3 rounded cursor-pointer hover:bg-blue-600"><i class="fab fa-facebook-f"></i></div>
+                <div class="bg-gray-800 p-3 rounded cursor-pointer hover:bg-pink-600"><i class="fab fa-instagram"></i></div>
+                <div class="bg-gray-800 p-3 rounded cursor-pointer hover:bg-green-600"><i class="fab fa-whatsapp"></i></div>
             </div>
         </div>
     </div>
-    <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-800 text-center text-gray-500 text-[11px]">
-        © 2026 rkDasGraphic | All rights reserved. Designed & developed by rkDasGraphic [cite: 160]
+    <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-gray-900 text-center text-gray-500 text-[11px] uppercase tracking-widest">
+        © 2026 rkDasGraphic | ALL RIGHTS RESERVED.
     </div>
 </footer>
+
+<div id="detailsModal" class="flex items-center justify-center p-4">
+    <div class="modal-content bg-white w-full max-w-5xl rounded-2xl overflow-hidden flex flex-col md:flex-row relative">
+        <button onclick="closeModal()" class="absolute top-5 right-5 text-3xl font-light hover:text-red-500">&times;</button>
+        <div class="md:w-1/2 bg-gray-50 flex items-center justify-center"><img id="modalImg" src="" class="max-h-[500px] object-contain"></div>
+        <div class="md:w-1/2 p-12">
+            <h2 id="modalTitle" class="text-3xl font-bold text-gray-900 mb-2"></h2>
+            <p id="modalPrice" class="text-4xl font-black text-indigo-700 mb-6"></p>
+            <div class="h-px bg-gray-100 mb-6"></div>
+            <p class="text-gray-500 leading-relaxed mb-10" id="modalDesc"></p>
+            <a id="waLink" href="#" class="block text-center bg-[#25d366] text-white py-4 rounded-lg font-bold text-lg hover:shadow-xl transition">Buy on WhatsApp</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openModal(t, p, i, d) {
+        document.getElementById('modalTitle').innerText = t;
+        document.getElementById('modalPrice').innerText = p;
+        document.getElementById('modalDesc').innerText = d;
+        document.getElementById('modalImg').src = i;
+        document.getElementById('waLink').href = "https://wa.me/917008807942?text=I want to buy: " + t;
+        document.getElementById('detailsModal').style.display = 'flex';
+    }
+    function closeModal() { document.getElementById('detailsModal').style.display = 'none'; }
+    window.onclick = function(e) { if(e.target == document.getElementById('detailsModal')) closeModal(); }
+</script>
 
 </body>
 </html>
