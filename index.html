@@ -3,75 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Das Shopping-mall | Karanjia</title>
+    <title>Das Shopping-mall | Premium Digital Products</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .product-card { transition: 0.3s; border: 1px solid #e5e7eb; }
-        .product-card:hover { transform: translateY(-5px); border-color: #febd69; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .amazon-bg { background-color: #131921; }
+        :root { --primary: #1a3a8a; --accent: #febd69; }
+        .category-card:hover { transform: translateY(-5px); transition: 0.3s; }
+        .nav-link:hover { color: var(--accent); border-bottom: 2px solid var(--accent); }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-50 text-gray-800">
 
-<nav class="amazon-bg text-white sticky top-0 z-50">
-    <div class="max-w-[1500px] mx-auto flex items-center p-2 gap-4">
-        <div class="text-2xl font-bold text-[#febd69] ml-4">Das Shopping-mall</div>
-        <div class="hidden md:flex flex-1 items-center bg-white rounded-md overflow-hidden">
-            <input type="text" placeholder="Search for PSD, CDR, Backgrounds..." class="w-full p-2 text-black outline-none">
-            <button class="bg-[#febd69] p-2 px-5 text-black hover:bg-[#f3a847]"><i class="fa fa-search"></i></button>
+<header class="bg-[#001f3f] text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex items-center justify-between p-4">
+        <div class="text-2xl font-bold italic tracking-wider">rk<span class="text-blue-400">Das</span> Graphic</div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#" class="nav-link pb-1">Home</a>
+            <a href="#" class="nav-link pb-1">Graphic Design</a>
+            <a href="#" class="nav-link pb-1">Premium</a>
+            <a href="#" class="nav-link pb-1">CorelDraw File</a>
         </div>
-        <div class="flex items-center space-x-6 mr-4 text-sm">
-            <div class="cursor-pointer">Hello, Siba<br><b class="text-base">Account</b></div>
-            <div class="cursor-pointer font-bold flex items-center"><i class="fa fa-shopping-cart text-2xl mr-1"></i> Cart</div>
+        <div class="flex items-center space-x-4">
+            <i class="fa fa-search cursor-pointer hover:text-blue-400"></i>
+            <i class="fa fa-user cursor-pointer hover:text-blue-400"></i>
+            <div class="relative cursor-pointer">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="absolute -top-2 -right-2 bg-blue-600 text-[10px] px-1.5 rounded-full">0</span>
+            </div>
         </div>
     </div>
-</nav>
+</header>
 
-<div class="flex max-w-[1500px] mx-auto mt-4 gap-4 px-4">
-    
-    <aside class="hidden lg:block w-64 bg-white p-4 rounded shadow-sm h-fit">
-        <h3 class="font-bold border-b pb-2 mb-4">Categories</h3>
-        <ul class="space-y-3 text-sm">
-            <li><input type="checkbox" class="mr-2"> Wedding PSD Packs</li>
-            <li><input type="checkbox" class="mr-2"> Festival CDR Files</li>
-            <li><input type="checkbox" class="mr-2"> PNG Overlays</li>
-            <li><input type="checkbox" class="mr-2"> HD Backgrounds</li>
-            <li><input type="checkbox" class="mr-2"> Banner Templates</li>
-        </ul>
-        <h3 class="font-bold border-b pb-2 mt-6 mb-4">Price Range</h3>
-        <ul class="space-y-2 text-sm text-blue-700">
-            <li class="cursor-pointer hover:text-orange-600">Under ₹200</li>
-            <li class="cursor-pointer hover:text-orange-600">₹200 - ₹500</li>
-            <li class="cursor-pointer hover:text-orange-600">₹500 - ₹1000</li>
-        </ul>
-    </aside>
-
-    <main class="flex-1">
-        <h2 class="text-2xl font-bold mb-4 bg-white p-4 rounded shadow-sm">Trending Graphics for You</h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 mb-10">
-            
-            <div class="bg-white p-4 rounded product-card cursor-pointer flex flex-col justify-between" onclick="alert('Product Details Coming Soon!')">
-                <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400" class="w-full h-40 object-cover mb-2 rounded">
-                <h4 class="font-medium text-sm line-clamp-2">Premium Wedding Studio PSD Background (50 Layers)</h4>
-                <div class="text-yellow-500 text-xs my-1"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half"></i> 1,240</div>
-                <p class="text-xl font-bold text-red-700">₹499 <span class="text-xs text-gray-500 font-normal line-through">₹999</span></p>
-                <button class="bg-[#febd69] hover:bg-[#f3a847] w-full py-1.5 mt-2 rounded-md font-medium text-sm">Add to Cart</button>
-            </div>
-            </div>
-    </main>
+<div class="bg-[#001f3f] text-center py-20 px-4">
+    <h1 class="text-4xl md:text-5xl font-black text-white mb-4">Creative Templates, Designed for You</h1>
+    <p class="text-gray-300 text-lg">The Best Graphic Design Templates for Photoshop & CorelDraw</p>
+    <div class="mt-8 flex justify-center">
+        <input type="text" placeholder="Search for files..." class="w-full max-w-lg p-3 rounded-l-lg text-black outline-none">
+        <button class="bg-blue-600 px-6 rounded-r-lg font-bold hover:bg-blue-700 transition text-white"><i class="fa fa-search"></i></button>
+    </div>
 </div>
 
-<footer class="bg-[#232f3e] text-white p-10 mt-10">
-    <div class="max-w-7xl mx-auto text-center">
-        <p class="text-lg font-bold mb-2 text-[#febd69]">DAS PAN CENTER & SHOPPING-MALL</p>
-        <p class="text-sm text-gray-400">Karanjia, Odisha | WhatsApp: 7008807942</p>
-        <div class="mt-4 flex justify-center space-x-6 text-xl">
-            <i class="fab fa-facebook cursor-pointer"></i>
-            <i class="fab fa-instagram cursor-pointer"></i>
-            <i class="fab fa-whatsapp cursor-pointer"></i>
+<div class="max-w-7xl mx-auto py-12 px-4 text-center">
+    <h2 class="text-3xl font-bold mb-2">Browse By Category</h2>
+    <p class="text-gray-500 mb-10">Discover Creativity in Every Category</p>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        <div class="bg-white p-6 rounded-xl shadow-sm category-card cursor-pointer border border-gray-100 text-center">
+            <div class="bg-blue-100 text-blue-800 w-12 h-12 flex items-center justify-center rounded-lg mx-auto mb-3 font-bold">Ps</div>
+            <p class="font-bold">PSD File</p>
         </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm category-card cursor-pointer border border-gray-100 text-center">
+            <div class="bg-orange-100 text-orange-800 w-12 h-12 flex items-center justify-center rounded-lg mx-auto mb-3"><i class="fa fa-parachute-box"></i></div>
+            <p class="font-bold">CDR File</p>
+        </div>
+        </div>
+</div>
+
+<div class="max-w-7xl mx-auto py-12 px-4">
+    <div class="flex justify-between items-center mb-8">
+        <h2 class="text-2xl font-bold border-l-4 border-blue-600 pl-4">Featured Items</h2>
+        <a href="#" class="text-blue-600 font-bold hover:underline">View All</a>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden border hover:shadow-md transition">
+            <div class="relative">
+                <span class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">-62%</span>
+                <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400" class="w-full h-64 object-cover">
+                <div class="absolute bottom-2 right-2 bg-white p-2 rounded-full shadow-md cursor-pointer hover:bg-red-50 text-red-500">
+                    <i class="fa-regular fa-heart"></i>
+                </div>
+            </div>
+            <div class="p-4">
+                <h3 class="font-medium text-sm mb-2 line-clamp-2">Premium 25x4 Wedding Standee PSD Template | Fully Editable</h3>
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-400 line-through text-sm">₹1,299.00</span>
+                    <span class="text-blue-700 font-bold text-lg">₹499.00</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-sm overflow-hidden border hover:shadow-md transition">
+            <div class="relative">
+                <span class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded">-75%</span>
+                <img src="https://images.unsplash.com/photo-1563297007-0686b7003af7?w=400" class="w-full h-64 object-cover">
+            </div>
+            <div class="p-4">
+                <h3 class="font-medium text-sm mb-2 line-clamp-2">Creative 1st Birthday Invitation Card PSD Template</h3>
+                <div class="flex items-center space-x-2">
+                    <span class="text-gray-400 line-through text-sm">₹399.00</span>
+                    <span class="text-blue-700 font-bold text-lg">₹100.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-[#001f3f] text-white py-12 px-4 border-t border-blue-900">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div>
+            <div class="text-xl font-bold mb-4">rk<span class="text-blue-400">Das</span> Graphic</div>
+            <p class="text-gray-400 text-sm leading-relaxed">We are dedicated to empowering businesses through cutting-edge technology and creative solutions.</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4">Company</h4>
+            <ul class="text-gray-400 text-sm space-y-2">
+                <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+                <li><a href="#" class="hover:text-white">Terms & Conditions</a></li>
+                <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4">Contact Us</h4>
+            <p class="text-gray-400 text-sm mb-2">📍 Karanjia, Mayurbhanj, Odisha</p>
+            <p class="text-gray-400 text-sm mb-2">📧 your-mail@gmail.com</p>
+            <p class="text-gray-400 text-sm">📞 +91 7008807942</p>
+        </div>
+        <div>
+            <h4 class="font-bold mb-4">Follow Us</h4>
+            <div class="flex space-x-4 text-xl">
+                <i class="fab fa-facebook-f cursor-pointer hover:text-blue-400"></i>
+                <i class="fab fa-whatsapp cursor-pointer hover:text-green-400"></i>
+                <i class="fab fa-instagram cursor-pointer hover:text-pink-400"></i>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mt-12 pt-8 border-t border-blue-900 text-gray-500 text-xs">
+        © 2026 rkDasGraphic | All Rights Reserved.
     </div>
 </footer>
 
